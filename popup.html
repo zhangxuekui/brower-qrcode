@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR Code Generator</title>
     <script src="qrcodejs2.js"></script>
+    <script src="jsQR.js"></script>
     <script src="qrcode.min.js"></script>
     <style>
       button {
         margin: 5px 0;
+        display: block; /* 使按钮为块级元素 */
+        margin-left: auto; /* 左侧自动边距 */
+        margin-right: auto; /* 右侧自动边距 */
+      }
+      #upload-button-container {
+        text-align: center; /* 中心对齐 */
       }
     </style>
   </head>
   <body>
     <div id="qrcode"></div>
     <div id="qrcode-text"></div>
+    <div id="upload-button-container"> <!-- 新增容器 -->
+      <input type="file" id="file-input" accept="image/*" style="display: none;" />
+      <button id="upload-button">识别二维码图片</button>
+    </div>
+    <div id="decoded-text"></div>
+    <!-- 显示识别的二维码信息 -->
     <script src="popup.js"></script>
   </body>
 </html>
